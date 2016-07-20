@@ -23,7 +23,6 @@ export default class Controller {
             html = this.createHTML(contact);
         this.list.contacts.push(contact); // update model
         this.interface.find('main').append(html); // update view
-        console.log(this.list);
     }
 
     createDummyData(Data){
@@ -43,7 +42,6 @@ export default class Controller {
                 };
             this.addContact(options);
         });
-        console.log(data);
     }
 
     createHTML(contact){
@@ -67,8 +65,9 @@ export default class Controller {
     }
 
     remove(event){
-        let delID = event.target.dataset.id;
+        let delID = Number(event.target.dataset.id);
         this.interface.find(`#_${delID}`).remove();
+        this.list.contacts = this.list.contacts.filter(i => i.id !== delID);
     }
 
     submit(event){
