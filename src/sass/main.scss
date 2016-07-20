@@ -51,6 +51,7 @@ body {
     main {
         padding: 0 20px;
         .contact {
+            position: relative;;
             clear: both;
             font-size: 1.75em;
             overflow: auto;
@@ -67,6 +68,13 @@ body {
                     @include border-radius(12px);
                     @include box-shadow(0 5px 5px -5px);
                 }
+            }
+            .close {
+                position: absolute;
+                cursor: pointer;
+                right: 5px;
+                top: 5px;
+                font-size: 2em;
             }
             .info {
                 margin-left: 140px;

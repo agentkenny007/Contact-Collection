@@ -13,7 +13,7 @@ export default class Controller {
     init(){
         this.ajax.then(data => this.createDummyData(data))
         this.interface
-            // .on('click', '', function(){  })
+            .on('click', '.close', e => this.remove(e))
             .on('submit', '.add-contact', e => this.submit(e));
     }
 
@@ -48,7 +48,7 @@ export default class Controller {
 
     createHTML(contact){
         return `
-            <section class="contact">
+            <section class="contact" id="_${contact.id}">
                 <div class="avatar">
                     <img src="${contact.pic}">
                 </div>
@@ -61,9 +61,14 @@ export default class Controller {
                     ${ contact.birthday ? `<span class="birthday">🎉🎈🎂 &nbsp;${contact.birthday}</span>` : '' }
                     ${ contact.blog ? `<span class="blog">${contact.blog}</span>` : '' }
                 </div>
-                <span class="close"></span>
+                <span class="close fa fa-times-circle" data-id="${contact.id}"></span>
             </section>
         `;
+    }
+
+    remove(event){
+        let delID = event.target.dataset.id;
+        this.interface.find(`#_${delID}`).remove();
     }
 
     submit(event){

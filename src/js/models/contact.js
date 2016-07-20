@@ -1,7 +1,10 @@
+import _ from 'lodash';
+
 export default class Contact {
     constructor(options){
         let contact = this;
         options = options || {};
+        contact.id = _.random(1000);
         contact.birthday = options.birthday;
         contact.blog = options.url
         contact.email = options.email;
