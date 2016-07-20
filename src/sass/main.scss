@@ -75,6 +75,12 @@ body {
                 right: 5px;
                 top: 5px;
                 font-size: 2em;
+                &:hover {
+                    color: #C400BC;
+                }
+                &:active {
+                    color: lightgrey;
+                }
             }
             .info {
                 margin-left: 140px;
