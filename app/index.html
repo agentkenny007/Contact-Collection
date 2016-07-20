@@ -3,13 +3,37 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Cool Project</title>
+    <title>ContactCollection</title>
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
-    <div class="container">
-      <p>Welcome to your life.</p>
+    <div class="wrapper">
+        <header>
+            <h1>Contact Collection</h1>
+            <div class="icon"><span></span></div>
+        </header>
+        <main>
+            <section class="contact-form">
+                <form action="#" class="add-contact">
+                    <input type="text" class="first-name" placeholder="First name...">
+                    <input type="text" class="last-name" placeholder="Last name...">
+                    <input type="tel" class="phone" placeholder="Home phone...">
+                    <input type="tel" class="mobile" placeholder="Mobile...">
+                    <input type="email" class="email" placeholder="Email...">
+                    <input type="url" class="url" placeholder="Homepage/Blog...">
+                    <label for="bday">Birthday:</label><input type="date" id="bday" class="birthday" title="Birthday...">
+                    <input type="text" class="city" placeholder="Current city...">
+                    <input type="text" class="state" placeholder="Current state...">
+                    <input type="text" class="image-url" placeholder="Contact photo (url)...">
+                    <button>collect contact</button>
+                </form>
+            </section>
+            <hr>
+        </main>
+        <footer></footer>
     </div>
     <script src="js/bundle.js"></script>
   </body>
