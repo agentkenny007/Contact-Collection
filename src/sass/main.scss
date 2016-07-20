@@ -1,0 +1,130 @@
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -khtml-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin box-shadow($shadow) {
+    -webkit-box-shadow: $shadow;
+    -moz-box-shadow: $shadow;
+    -ms-box-shadow: $shadow;
+    box-shadow: $shadow;
+}
+
+@mixin transition($transition) {
+    -webkit-transition: $transition;
+    -moz-transition: $transition;
+    -o-transition: $transition;
+    transition: $transition;
+}
+
+@mixin transform($transformation) {
+    -webkit-transform: $transformation;
+    -moz-transform: $transformation;
+    -o-transform: $transformation;
+    -ms-transform: $transformation;
+    transform: $transformation;
+}
+
+body {
+    font: 10px 'Architects Daughter';
+}
+
+.wrapper {
+    max-width: 600px;
+    margin: auto;
+    header {
+        text-align: center;
+        h1 {
+            font-size: 3em;
+        }
+        .icon {
+            span {
+                display: inline-block;
+                width: 218px;
+                height: 238px;
+                background: url(../images/contact-icon.png);
+            }
+        }
+    }
+    main {
+        padding: 0 20px;
+        .contact {
+            clear: both;
+            font-size: 1.75em;
+            overflow: auto;
+            border-bottom: 1px solid;
+            margin-bottom: 5px;
+            @include border-radius(3px);
+            @include box-shadow(0 5px 8px -4px);
+            .avatar {
+                float: left;
+                img {
+                    display: block;
+                    max-width: 128px;
+                    padding: 5px;
+                    @include border-radius(12px);
+                    @include box-shadow(0 5px 5px -5px);
+                }
+            }
+            .info {
+                margin-left: 140px;
+                span {
+                    display: block;
+                    &:last-child {
+                        margin-bottom: 5px;
+                    }
+                }
+                .fa {
+                    float: left;
+                    margin-right: 10px;
+                }
+                .name {
+                    text-transform: capitalize;
+                    font-size: 1.5em;
+                }
+                .email {
+                    text-transform: uppercase;
+                    font-size: 0.65em;
+                    color: grey;
+                }
+                .blog {
+                    cursor: pointer;
+                    color: #007EBC;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+                .location {
+                    text-transform: capitalize;
+                    font-size: 1.15em;
+                    color: #C400BC;
+                }
+            }
+        }
+        .contact-form {
+            padding: 13px 10px 10px;
+            background: #FFA3E0;
+            border: 1px solid #AD00A7;
+            @include border-radius(10px);
+            @include box-shadow(0 10px 10px -5px grey);
+            font-size: 2em;
+            input {
+                width: 98%;
+                box-sizing: border-box;
+                margin: 0 0 5px 1%;
+                outline-color: #78006F;
+            }
+            [type=tel] {
+                width: 48%;
+                float: left;
+                margin: 0 1% 5px;
+            }
+            label {
+                margin: 0 0 5px 1%;
+                display: block;
+            }
+        }
+    }
+}
